@@ -68,14 +68,14 @@
   libgtk2.0-dev
   pkg-config
   ```
-  위의 패키지들은 Ubuntu Linux 시스템의 universe repository에 있을 수 있다. 만약 Repository를 Enable하지 않으셨다면,
+  위의 패키지들은 Ubuntu Linux 시스템의 universe repository에 있을 수 있습니다. 만약 Repository를 Enable하지 않으셨다면,
   다음과 같은 과정을 수행하면 됩니다.
   
   ```bash
   $ sudo apt-add-repository universe
   $ sudo apt-get update
   ```
-  이제 Package
+  이제 Package를 설치합니다.
   
   ```bash
   $ sudo apt-get install \
@@ -103,4 +103,61 @@
   $ sudo apt-get install python3-dev python3-numpy python3-py python3-pytest #Python3
   ```
   
+  * Build Area 생성
+  ```bash
+  #in opencv folder
+  $ mkdir build
+  $ cd build
+  ```
+  
+  * 빌드를 위한 OpenCV 설정 CMAKE
+  
+  **CMAKE_INSTALL_PREFIX는 /usr에서 원하는 어떤 폴더로도 가능합니다. 대신 위치를 기억하고 PATH 설정에 주의해야 합니다**
+  **각 파라미터의 의미는 꼭 숙지하시고 사용 여부와 버전을 맞추어야 합니다**
+  
+  ```bash
+  $ cmake \
+    -DCMAKE_BUILD_TYPE=Release \
+    -DCMAKE_INSTALL_PREFIX=/usr/local \
+    -DBUILD_PNG=OFF \
+    -DBUILD_TIFF=OFF \
+    -DBUILD_TBB=OFF \
+    -DBUILD_JPEG=OFF \
+    -DBUILD_JASPER=OFF \
+    -DBUILD_ZLIB=OFF \
+    -DBUILD_EXAMPLES=ON \
+    -DBUILD_JAVA=OFF \
+    -DBUILD_opencv_python2=ON \
+    -DBUILD_opencv_python3=OFF \
+    -DENABLE_PRECOMPILED_HEADERS=OFF \
+    -DWITH_OPENCL=OFF \
+    -DWITH_OPENMP=OFF \
+    -DWITH_FFMPEG=ON \
+    -DWITH_GSTREAMER=OFF \
+    -DWITH_GSTREAMER_0_10=OFF \
+    -DWITH_CUDA=ON \
+    -DWITH_GTK=ON \
+    -DWITH_VTK=OFF \
+    -DWITH_TBB=ON \
+    -DWITH_1394=OFF \
+    -DWITH_OPENEXR=OFF \
+    -DCUDA_TOOLKIT_ROOT_DIR=/usr/local/cuda-10.2 \
+    -DCUDA_ARCH_BIN=7.2 \
+    -DCUDA_ARCH_PTX="" \
+    -DINSTALL_C_EXAMPLES=ON \
+    -DINSTALL_TESTS=OFF \
+    -DOPENCV_TEST_DATA_PATH=../opencv_extra/testdata \
+    ../opencv
+  ```
+  
+  * OpenCV 빌드
+  **-j% 의 숫자 부분은 빌드하는 Tegra 코어의 프로세서 수를 넘지 말아야 합니다. 빌드 멀티프로세싱을 몇 코어로 진행하느냐를 결정합니다**
+  ```bash
+  $ sudo make -j6
+  $ sudo make install
+  ```
+  
+  * 파라미터에 대한 참고
+  
+  [CMake_Parameter_Reference](https://docs.opencv.org/master/db/d05/tutorial_config_reference.html)
   
