@@ -2,6 +2,8 @@
 
 원본:: [OpenCV](https://docs.opencv.org/3.4/index.html)
 
+# OpenCV 코드 작성 가이드
+OpenCV Transition Guide: [OpenCV_Guide](https://docs.opencv.org/3.4/db/dfa/tutorial_transition_guide.html)
 ## ARM 기반(Jetson) Linux 시스템에서의 크로스 컴파일
 
 * 요구 환경
