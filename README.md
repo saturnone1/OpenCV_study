@@ -19,7 +19,7 @@
   [optional] ffmpeg or libav development packages for armeabi(hf): libavcodec-dev, libavformat-dev, libswscale-dev;   
   [optional] GTK+2.x or higher, including headers (libgtk2.0-dev) for armeabi(hf);   
   [optional] libdc1394 2.x;   
-  [optional] libjpeg-dev, libpng-dev, libtiff-dev, libjasper-dev for armeabi(hf)  
+  [optional] libjpeg-dev, libpng-dev, libtiff-dev, libjasper-dev for armeabi(hf)   
 
 * 빌드 시 Cross Compile 적용 방법
 
