@@ -1,6 +1,6 @@
 # OpenCV_study (3.4 ver)
 
-원본 [OpenCV](https://docs.opencv.org/3.4/index.html)
+원본:: [OpenCV](https://docs.opencv.org/3.4/index.html)
 
 ## ARM 기반 Linux 시스템에서의 크로스 컴파일
 
@@ -160,5 +160,5 @@
   * 빌드 파라미터에 대한 참고   
   **Python Binding을 하고자 한다면 이 사이트를 참조하십시오**   
   
-  [CMake_Parameter_Reference](https://docs.opencv.org/master/db/d05/tutorial_config_reference.html)
+  OpenCV Cmake Parameter:: [CMake_Parameter_Reference](https://docs.opencv.org/master/db/d05/tutorial_config_reference.html)
   
