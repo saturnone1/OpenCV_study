@@ -157,7 +157,8 @@
   $ sudo make install
   ```
   
-  * 파라미터에 대한 참고
+  * 빌드 파라미터에 대한 참고
+  **Python Binding을 하고자 한다면 이 사이트를 참조하십시오**
   
   [CMake_Parameter_Reference](https://docs.opencv.org/master/db/d05/tutorial_config_reference.html)
   
