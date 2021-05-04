@@ -2,7 +2,7 @@
 
 원본:: [OpenCV](https://docs.opencv.org/3.4/index.html)
 
-## ARM 기반 Linux 시스템에서의 크로스 컴파일
+## ARM 기반(Jetson) Linux 시스템에서의 크로스 컴파일
 
 * 요구 환경
 
