@@ -1,6 +1,6 @@
 # OpenCV_study (3.4 ver)
 
-[OpenCV](https://docs.opencv.org/3.4/index.html)
+원본 [OpenCV](https://docs.opencv.org/3.4/index.html)
 
 ## ARM 기반 Linux 시스템에서의 크로스 컴파일
 
