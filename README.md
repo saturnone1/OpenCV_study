@@ -150,6 +150,11 @@
     ../opencv
   ```
   
+  ```bash
+  #OpenCV의 3.0 버전 이상에서 최대의 기능을 활용하기 위해서는 다음의 파라미터가 필수입니다.
+  -DOPENCV_EXTRA_MODULES_PATH=<path-to-opencv_contrib>/modules
+  ```
+  
   * OpenCV 빌드   
   **-j% 의 숫자 부분은 빌드하는 Tegra 코어의 프로세서 수를 넘지 말아야 합니다. 빌드 멀티프로세싱을 몇 코어로 진행하느냐를 결정합니다**   
   ```bash
