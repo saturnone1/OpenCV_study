@@ -110,10 +110,10 @@
   $ cd build
   ```
   
-  * 빌드를 위한 OpenCV 설정 CMAKE
+  * 빌드를 위한 OpenCV 설정 CMAKE   
   
-  **CMAKE_INSTALL_PREFIX는 /usr에서 원하는 어떤 폴더로도 가능합니다. 대신 위치를 기억하고 PATH 설정에 주의해야 합니다**
-  **각 파라미터의 의미는 꼭 숙지하시고 사용 여부와 버전을 맞추어야 합니다**
+  **CMAKE_INSTALL_PREFIX는 /usr에서 원하는 어떤 폴더로도 가능합니다. 대신 위치를 기억하고 PATH 설정에 주의해야 합니다**   
+  **각 파라미터의 의미는 꼭 숙지하시고 사용 여부와 버전을 맞추어야 합니다**   
   
   ```bash
   $ cmake \
@@ -150,15 +150,15 @@
     ../opencv
   ```
   
-  * OpenCV 빌드
-  **-j% 의 숫자 부분은 빌드하는 Tegra 코어의 프로세서 수를 넘지 말아야 합니다. 빌드 멀티프로세싱을 몇 코어로 진행하느냐를 결정합니다**
+  * OpenCV 빌드   
+  **-j% 의 숫자 부분은 빌드하는 Tegra 코어의 프로세서 수를 넘지 말아야 합니다. 빌드 멀티프로세싱을 몇 코어로 진행하느냐를 결정합니다**   
   ```bash
   $ sudo make -j6
   $ sudo make install
   ```
   
-  * 빌드 파라미터에 대한 참고
-  **Python Binding을 하고자 한다면 이 사이트를 참조하십시오**
+  * 빌드 파라미터에 대한 참고   
+  **Python Binding을 하고자 한다면 이 사이트를 참조하십시오**   
   
   [CMake_Parameter_Reference](https://docs.opencv.org/master/db/d05/tutorial_config_reference.html)
   
