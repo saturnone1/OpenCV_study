@@ -73,7 +73,7 @@ Morphological Opeartor들 즉, dilate, erode 두 가지로 결합한 다양한 �
    
 Hit-or-Miss 변환은 이진 이미지에서 패턴을 찾는 데 유용합니다. 특히, 이웃이 제 1 구조화 요소 (B1)의 모양과 일치하는 동시에 제 2 구조화 요소 (B2)의 모양과 일치하지 않는 픽셀을 찾습니다. 수학적으로 이미지 A에 적용되는 연산은 다음과 같이 표현할 수 있습니다.[HitOrMiss](https://docs.opencv.org/master/db/d06/tutorial_hitOrMiss.html)      
    
-<center>**_A⊛B=(A⊖B1)∩(Ac⊖B2)_**</center>      
+**_A⊛B=(A⊖B1)∩(Ac⊖B2)_**      
    
 그러므로 Hit Or Miss 연산은 다음과 같은 세 과정을 포함합니다.      
 
@@ -82,25 +82,25 @@ Hit-or-Miss 변환은 이진 이미지에서 패턴을 찾는 데 유용합니�
 3. 1번과 2번의 결과에 AND 연산 합니다.    
 
 식을 변환하여 다음과 같이 B1, B2를 결합한 형태로 수행할 수도 있습니다.      
-<center>![HitOrMiss1](https://docs.opencv.org/master/hitmiss_kernels.png)</center>   
-<center>**_Structuring elements (kernels). Left: kernel to 'hit'. Middle: kernel to 'miss'. Right: final combined kernel_**</center>   
+![HitOrMiss1](https://docs.opencv.org/master/hitmiss_kernels.png)   
+**_Structuring elements (kernels). Left: kernel to 'hit'. Middle: kernel to 'miss'. Right: final combined kernel_**   
 
 다음의 바이너리 이미지에 적용을 한다고 합시다.   
-<center>![Input](https://docs.opencv.org/master/hitmiss_input.png)</center>   
-<center>**Input binary image**</center>   
+![Input](https://docs.opencv.org/master/hitmiss_input.png)   
+**Input binary image**   
 
 결과는 다음과 같습니다.   
-<center>![output1](https://docs.opencv.org/master/hitmiss_output.png)</center>   
-<center>**Output binary image**</center>   
+![output1](https://docs.opencv.org/master/hitmiss_output.png)   
+**Output binary image**   
 
 Kernel에서 반드시 -1: Miss 1: Hit에 해당하는 부분이 0과 255로 나타나는 중앙 Pixel만을 255로 지정합니다   
 다음을 예제를 살펴봅시다   
 
-<center>![HM2](https://docs.opencv.org/master/hitmiss_example2.png)</center>   
-<center>**Kernel and output result for finding top-right corners**</center>   
+![HM2](https://docs.opencv.org/master/hitmiss_example2.png)   
+**Kernel and output result for finding top-right corners**   
 
-<center>![HM3](https://docs.opencv.org/master/hitmiss_example3.png)</center>   
-<center>**Kernel and output result for finding left end points**</center>   
+![HM3](https://docs.opencv.org/master/hitmiss_example3.png)   
+**Kernel and output result for finding left end points**   
 
 이를 이용하여 물체의 픽셀 형태 중에서 원하는 형태와 일치하는 물체의 존재 여부를 구분할 수도 있겠습니다.   
 요즘 추세인 물체 인식의 방법 중 하나로 연구가 될 수 도 있으리라 봅니다.
