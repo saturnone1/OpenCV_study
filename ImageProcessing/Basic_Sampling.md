@@ -16,7 +16,7 @@
 ![Pyramid](https://docs.opencv.org/3.4/Pyramids_Tutorial_Pyramid_Theory.png)   
 
 * Gi 번째 image에서 Gi+1번째로 작은 이미지를 만들 때, 다음과 같은 Gaussian Kernel을 적용한다.   
-
+![GKernel](https://github.com/saturnone1/OpenCV_study/blob/32f02a61aded1c4465071f5e17a21d1aaf4fd429/ImageProcessing/image/SamplingKernel.png)   
 
 위의 Kernel은 Even-Number의 row와 column을 지운다.
 
