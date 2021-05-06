@@ -35,48 +35,49 @@ enum  	cv::MorphTypes {
 }
 ```
 
-* Opening
-![Opening](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Opening.png)
+* Opening   
+![Opening](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Opening.png)   
 *dst=open(src,element)=dilate(erode(src,element))*   
 - 화면에 보이는 미세하게 작은 물체를 없애는 데에 적합하다. (검은 배경에 하얀색 작은 물체)
 
-* Closing
-![Closing](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Closing.png)
-*dst=close(src,element)=erode(dilate(src,element))*
-- 하얀 배경에 검정색 미세한 물체를 없애는 데에 적합하다.
+* Closing   
+![Closing](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Closing.png)   
+*dst=close(src,element)=erode(dilate(src,element))*   
+- 하얀 배경에 검정색 미세한 물체를 없애는 데에 적합하다.   
 
-* Morphological Gradient
-![Morphological Gradient](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Gradient.png)
-*dst=morphgrad(src,element)=dilate(src,element)−erode(src,element)*
-- 물체의 가장자리를 식별하는 데에 적합하다.
+* Morphological Gradient   
+![Morphological Gradient](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Gradient.png)   
+*dst=morphgrad(src,element)=dilate(src,element)−erode(src,element)*   
+- 물체의 가장자리를 식별하는 데에 적합하다.   
 
-* Top Hat
-![TopHat](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_TopHat.png)
-*dst=tophat(src,element)=src−open(src,element)*
-- 원본 이미지와 Opening된 이미지의 차이를 보여준다.
+* Top Hat   
+![TopHat](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_TopHat.png)   
+*dst=tophat(src,element)=src−open(src,element)*   
+- 원본 이미지와 Opening된 이미지의 차이를 보여준다.   
 
 * Black Hat
-![BlackHat](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png) 
-*https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png*
-- 원본 이미지와 close 이미지의 차이를 보여준다.
+![BlackHat](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png)    
+*https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png*   
+- 원본 이미지와 close 이미지의 차이를 보여준다.   
 
-* Hit or Miss
+* Hit or Miss   
 
 Morphological Opeartor들 즉, dilate, erode 두 가지로 결합한 다양한 연산을 했었다. 우리는 이 연산을 단순히 연속적으로 시행한 Opening, Closing 뿐 아니라, 각 연산의 교집합에 해당하는 부분만을 취할 것이다.   
 이 방법론이 Hit or Miss 인 것이다.   
    
-Hit-or-Miss 변환은 이진 이미지에서 패턴을 찾는 데 유용합니다. 특히, 이웃이 제 1 구조화 요소 (B1)의 모양과 일치하는 동시에 제 2 구조화 요소 (B2)의 모양과 일치하지 않는 픽셀을 찾습니다. 수학적으로 이미지 A에 적용되는 연산은 다음과 같이 표현할 수 있습니다.[HitOrMiss](https://docs.opencv.org/master/db/d06/tutorial_hitOrMiss.html)
+Hit-or-Miss 변환은 이진 이미지에서 패턴을 찾는 데 유용합니다. 특히, 이웃이 제 1 구조화 요소 (B1)의 모양과 일치하는 동시에 제 2 구조화 요소 (B2)의 모양과 일치하지 않는 픽셀을 찾습니다. 수학적으로 이미지 A에 적용되는 연산은 다음과 같이 표현할 수 있습니다.[HitOrMiss](https://docs.opencv.org/master/db/d06/tutorial_hitOrMiss.html)   
    
-*A⊛B=(A⊖B1)∩(Ac⊖B2)*
+*A⊛B=(A⊖B1)∩(Ac⊖B2)*   
    
-그러므로 Hit Or Miss 연산은 다음과 같은 세 과정을 포함합니다.
+그러므로 Hit Or Miss 연산은 다음과 같은 세 과정을 포함합니다.   
 
-1. 구조화 요소 B1으로 A 이미지를 Erode합니다.
-2. A의 Compliment 즉 Ac를 B2로 Erode합니다.
-3. 1번과 2번의 결과에 AND 연산 합니다. 
+1. 구조화 요소 B1으로 A 이미지를 Erode합니다.   
+2. A의 Compliment 즉 Ac를 B2로 Erode합니다.   
+3. 1번과 2번의 결과에 AND 연산 합니다.    
 
-![HitOrMiss1](https://docs.opencv.org/master/hitmiss_kernels.png)
-**Structuring elements (kernels). Left: kernel to 'hit'. Middle: kernel to 'miss'. Right: final combined kernel**
+![HitOrMiss1](https://docs.opencv.org/master/hitmiss_kernels.png)   
+**Structuring elements (kernels). Left: kernel to 'hit'. Middle: kernel to 'miss'. Right: final combined kernel**   
+
 
 
 
