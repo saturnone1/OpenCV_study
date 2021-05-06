@@ -68,10 +68,10 @@
     dilate(horizontal, horizontal, horizontalStructure, Point(-1, -1));
 ```
 
-	![SE_result](https://docs.opencv.org/3.4/horiz.png)   
+![SE_result](https://docs.opencv.org/3.4/horiz.png)   
 	이미지의 수평 길이의 30분의 1로 쪼갠 사이즈의 element를 만들고, 그 element를 적용시킨 모습이다.   
 
-	![SE_V](https://docs.opencv.org/3.4/linear_vert.png)   
+![SE_V](https://docs.opencv.org/3.4/linear_vert.png)   
 	**위와 같은 수직선상으로도 가능하다**   
 
 ```cpp
@@ -84,5 +84,5 @@
     dilate(horizontal, horizontal, horizontalStructure, Point(-1, -1));
 ```
 
-	![SE_V_result](https://docs.opencv.org/3.4/vert.png)   
+![SE_V_result](https://docs.opencv.org/3.4/vert.png)   
 	수직으로 30분의 1로 쪼갠 element를 적용시켜 줄이 검은색 neighboor에 Filtering된 모습이다.   
