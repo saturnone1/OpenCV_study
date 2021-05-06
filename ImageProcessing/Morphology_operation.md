@@ -8,19 +8,19 @@
 
 ## Dilation
 * Kernel 내 Max값을 가져다가 Anchor pixel 부분을 대체합니다.   
-![DilationBinary](https://docs.opencv.org/3.4/morph21.gif)   
-**Dilation on a Binary Image**   
+	![DilationBinary](https://docs.opencv.org/3.4/morph21.gif)   
+	**Dilation on a Binary Image**   
 
-![DilationGray](https://docs.opencv.org/3.4/morph6.gif)   
-**Dilation on a Grayscale Image**   
+	![DilationGray](https://docs.opencv.org/3.4/morph6.gif)   
+	**Dilation on a Grayscale Image**   
 
 ## Erosion
 * Kernel 내 Min값을 가져다가 Anchor Pixel 부분을 대체합니다.   
-![ErosionBinary](https://docs.opencv.org/3.4/morph211.png)   
-**Erosion on a Binary Image**   
+	![ErosionBinary](https://docs.opencv.org/3.4/morph211.png)   
+	**Erosion on a Binary Image**   
 
-![ErosionGrayscale](https://docs.opencv.org/3.4/morph61.png)    
-**Erosion on a Grayscale Image**   
+	![ErosionGrayscale](https://docs.opencv.org/3.4/morph61.png)    
+	**Erosion on a Grayscale Image**   
 
 ## Structuring Elements 구조화 요소 (Kernel)
 * 일반적으로 모든 Filtering에서 가장 많이 보이는 매우 중요한 부분입니다.   
@@ -28,8 +28,8 @@
 * 당연하게도 픽셀 하나하나 필터링을 위해 Image Size 보다는 매우 작아야 합니다.   
 * Matrix의 가운데 지점을 Pixel of Origin 이라고 부르며, 우리가 처리하고자 하는 픽셀의 위치에 해당합니다.   
 
-![StructuralElement](https://docs.opencv.org/3.4/morph12.gif)   
-**A Diamond-Shaped Structuring Element and its Origin**   
+	![StructuralElement](https://docs.opencv.org/3.4/morph12.gif)   
+	**A Diamond-Shaped Structuring Element and its Origin**   
 
 * 구조화 요소는 통상적으로 다음의 모양을 가집니다: Lines/ diamonds/ disks/ periodic lines/ circles/ sizes   
 * Input Image를 처리하기에 알맞다고 생각하는 모양을 정하여 진행하시면 됩니다.   
@@ -37,17 +37,17 @@
 
 ## Line Filter 직선 형태의 구조화 요소 적용
 * 원본 이미지   
-![ori](https://docs.opencv.org/3.4/src.png)      
+	![ori](https://docs.opencv.org/3.4/src.png)      
    
 * GrayScale   
-![Gray](https://docs.opencv.org/3.4/gray.png)    
+	![Gray](https://docs.opencv.org/3.4/gray.png)    
 
 ```cpp
 	cvtColor(src, gray, COLOR_BGR2GRAY);
 ```
 
 * GrayScale to Binary   
-![Binary](https://docs.opencv.org/3.4/binary.png)   
+	![Binary](https://docs.opencv.org/3.4/binary.png)   
 
 ```cpp
     // Apply adaptiveThreshold at the bitwise_not of gray, notice the ~ symbol
@@ -56,7 +56,7 @@
 ```
 
 * Structural Element   
-![SE](https://docs.opencv.org/3.4/linear_horiz.png)   
+	![SE](https://docs.opencv.org/3.4/linear_horiz.png)   
 
 ```cpp
     // Specify size on horizontal axis
@@ -69,10 +69,10 @@
 ```
 
 ![SE_result](https://docs.opencv.org/3.4/horiz.png)   
-이미지의 수평 길이의 30분의 1로 쪼갠 사이즈의 element를 만들고, 그 element를 적용시킨 모습이다.   
+	이미지의 수평 길이의 30분의 1로 쪼갠 사이즈의 element를 만들고, 그 element를 적용시킨 모습이다.   
 
 ![SE_V](https://docs.opencv.org/3.4/linear_vert.png)   
-**위와 같은 수직선상으로도 가능하다**   
+	**위와 같은 수직선상으로도 가능하다**   
 
 ```cpp
     // Specify size on horizontal axis
@@ -85,4 +85,4 @@
 ```
 
 ![SE_V_result](https://docs.opencv.org/3.4/vert.png)   
-수직으로 30분의 1로 쪼갠 element를 적용시켜 줄이 검은색 neighboor에 Filtering된 모습이다.   
+	수직으로 30분의 1로 쪼갠 element를 적용시켜 줄이 검은색 neighboor에 Filtering된 모습이다.   
