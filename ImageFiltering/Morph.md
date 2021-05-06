@@ -64,44 +64,43 @@ enum  	cv::MorphTypes {
 
 ### Black Hat
 ![BlackHat](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png)    
-*https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png*   
+*dst=blackhat(src,element)=close(src,element)−src*   
 - 원본 이미지와 close 이미지의 차이를 보여준다.   
 
 ### Hit or Miss
 
-Morphological Opeartor들 즉, dilate, erode 두 가지로 결합한 다양한 연산을 했었다. 우리는 이 연산을 단순히 연속적으로 시행한 Opening, Closing 뿐 아니라, 각 연산의 교집합에 해당하는 부분만을 취할 것이다.   
-이 방법론이 Hit or Miss 인 것이다.   
+Morphological Opeartor들 즉, dilate, erode 두 가지로 결합한 다양한 연산을 했었다. 우리는 이 연산을 단순히 연속적으로 시행한 Opening, Closing 뿐 아니라, 각 연산의 교집합에 해당하는 부분만을 취할 것이다. 이 방법론이 Hit or Miss 인 것이다.   
    
-Hit-or-Miss 변환은 이진 이미지에서 패턴을 찾는 데 유용합니다. 특히, 이웃이 제 1 구조화 요소 (B1)의 모양과 일치하는 동시에 제 2 구조화 요소 (B2)의 모양과 일치하지 않는 픽셀을 찾습니다. 수학적으로 이미지 A에 적용되는 연산은 다음과 같이 표현할 수 있습니다.[HitOrMiss](https://docs.opencv.org/master/db/d06/tutorial_hitOrMiss.html)   
+Hit-or-Miss 변환은 이진 이미지에서 패턴을 찾는 데 유용합니다. 특히, 이웃이 제 1 구조화 요소 (B1)의 모양과 일치하는 동시에 제 2 구조화 요소 (B2)의 모양과 일치하지 않는 픽셀을 찾습니다. 수학적으로 이미지 A에 적용되는 연산은 다음과 같이 표현할 수 있습니다.[HitOrMiss](https://docs.opencv.org/master/db/d06/tutorial_hitOrMiss.html)      
    
-**_A⊛B=(A⊖B1)∩(Ac⊖B2)_**   
+<center>**_A⊛B=(A⊖B1)∩(Ac⊖B2)_**</center>      
    
-그러므로 Hit Or Miss 연산은 다음과 같은 세 과정을 포함합니다.   
+그러므로 Hit Or Miss 연산은 다음과 같은 세 과정을 포함합니다.      
 
 1. 구조화 요소 B1으로 A 이미지를 Erode합니다.   
 2. A의 Compliment 즉 Ac를 B2로 Erode합니다.   
 3. 1번과 2번의 결과에 AND 연산 합니다.    
 
-식을 변환하여 다음과 같이 B1, B2를 결합한 형태로 수행할 수도 있습니다.   
-![HitOrMiss1](https://docs.opencv.org/master/hitmiss_kernels.png)   
-**_Structuring elements (kernels). Left: kernel to 'hit'. Middle: kernel to 'miss'. Right: final combined kernel_**   
+식을 변환하여 다음과 같이 B1, B2를 결합한 형태로 수행할 수도 있습니다.      
+<center>![HitOrMiss1](https://docs.opencv.org/master/hitmiss_kernels.png)</center>   
+<center>**_Structuring elements (kernels). Left: kernel to 'hit'. Middle: kernel to 'miss'. Right: final combined kernel_**</center>   
 
 다음의 바이너리 이미지에 적용을 한다고 합시다.   
-![Input](https://docs.opencv.org/master/hitmiss_input.png)   
-**Input binary image**   
+<center>![Input](https://docs.opencv.org/master/hitmiss_input.png)</center>   
+<center>**Input binary image**</center>   
 
 결과는 다음과 같습니다.   
-![output1](https://docs.opencv.org/master/hitmiss_output.png)   
-**Output binary image**   
+<center>![output1](https://docs.opencv.org/master/hitmiss_output.png)</center>   
+<center>**Output binary image**</center>   
 
 Kernel에서 반드시 -1: Miss 1: Hit에 해당하는 부분이 0과 255로 나타나는 중앙 Pixel만을 255로 지정합니다   
 다음을 예제를 살펴봅시다   
 
-![HM2](https://docs.opencv.org/master/hitmiss_example2.png)   
-**Kernel and output result for finding top-right corners**   
+<center>![HM2](https://docs.opencv.org/master/hitmiss_example2.png)</center>   
+<center>**Kernel and output result for finding top-right corners**</center>   
 
-![HM3](https://docs.opencv.org/master/hitmiss_example3.png)   
-**Kernel and output result for finding left end points**   
+<center>![HM3](https://docs.opencv.org/master/hitmiss_example3.png)</center>   
+<center>**Kernel and output result for finding left end points**</center>   
 
 이를 이용하여 물체의 픽셀 형태 중에서 원하는 형태와 일치하는 물체의 존재 여부를 구분할 수도 있겠습니다.   
 요즘 추세인 물체 인식의 방법 중 하나로 연구가 될 수 도 있으리라 봅니다.
