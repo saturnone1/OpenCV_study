@@ -60,7 +60,7 @@ enum  	cv::MorphTypes {
 *https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png*   
 - 원본 이미지와 close 이미지의 차이를 보여준다.   
 
-### <U>Hit or Miss</U>
+### <u>Hit or Miss</u>
 
 Morphological Opeartor들 즉, dilate, erode 두 가지로 결합한 다양한 연산을 했었다. 우리는 이 연산을 단순히 연속적으로 시행한 Opening, Closing 뿐 아니라, 각 연산의 교집합에 해당하는 부분만을 취할 것이다.   
 이 방법론이 Hit or Miss 인 것이다.   
