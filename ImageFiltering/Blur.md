@@ -6,7 +6,7 @@
 * medianBlur()   
 * bilateralFilter()   
 
-##Theory
+## Theory
 
 Smoothing 작업을 하기 위해서 *filter*를 이미지에 적용하여야 한다. 가장 유명하고 단순한 필터는 *linear*이며, 출력 픽셀 값(*g(i.j)*)들은 입력 픽셀 값(*f(i+k,j+l)*)들의 *weight*에 따라서 정해진다. kernel Array 내부의 값의 크기를 weight라고 합니다.    
 
