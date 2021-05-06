@@ -35,32 +35,32 @@ enum  	cv::MorphTypes {
 }
 ```
 
-* Opening   
+### Opening   
 ![Opening](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Opening.png)   
 *dst=open(src,element)=dilate(erode(src,element))*   
 - 화면에 보이는 미세하게 작은 물체를 없애는 데에 적합하다. (검은 배경에 하얀색 작은 물체)
 
-* Closing   
+### Closing   
 ![Closing](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Closing.png)   
 *dst=close(src,element)=erode(dilate(src,element))*   
 - 하얀 배경에 검정색 미세한 물체를 없애는 데에 적합하다.   
 
-* Morphological Gradient   
+### Morphological Gradient   
 ![Morphological Gradient](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_Gradient.png)   
 *dst=morphgrad(src,element)=dilate(src,element)−erode(src,element)*   
 - 물체의 가장자리를 식별하는 데에 적합하다.   
 
-* Top Hat   
+### Top Hat   
 ![TopHat](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_TopHat.png)   
 *dst=tophat(src,element)=src−open(src,element)*   
 - 원본 이미지와 Opening된 이미지의 차이를 보여준다.   
 
-* Black Hat
+### Black Hat
 ![BlackHat](https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png)    
 *https://docs.opencv.org/master/Morphology_2_Tutorial_Theory_BlackHat.png*   
 - 원본 이미지와 close 이미지의 차이를 보여준다.   
 
-* Hit or Miss   
+### Hit or Miss   
 
 Morphological Opeartor들 즉, dilate, erode 두 가지로 결합한 다양한 연산을 했었다. 우리는 이 연산을 단순히 연속적으로 시행한 Opening, Closing 뿐 아니라, 각 연산의 교집합에 해당하는 부분만을 취할 것이다.   
 이 방법론이 Hit or Miss 인 것이다.   
