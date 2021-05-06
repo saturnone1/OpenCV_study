@@ -17,8 +17,7 @@ Smoothing 작업을 하기 위해서 *filter*를 이미지에 적용하여야 �
 이제 Filter의 종류에 대해 알아봅시다.
 
 ### Normalized box Filter
-
-ImageFiltering/image/Screenshot from 2021-05-06 11-27-00.png
+![Normal](https://github.com/saturnone1/OpenCV_study/blob/e3ed54aa210f0c66cae4ae60ccb18337a7f937e4/ImageFiltering/image/Screenshot%20from%202021-05-06%2011-27-00.png)
 
 이 필터는 가장 쉽습니다. 각각의 *output pixel*들은 기준 pixel의 neighbor이웃 들의 mean평균 값으로 정해집니다. 그들 모두가 동등한 weight를 가집니다.    
 
