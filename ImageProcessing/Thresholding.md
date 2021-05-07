@@ -29,29 +29,32 @@ cv.threshold(src,thresh,maxval,type[,dst]) -> retval, dst
 ## Threshold Binary
 
 ![Binary](https://docs.opencv.org/3.4/Threshold_Tutorial_Theory_Binary.png)   
-
+![binary2](https://github.com/saturnone1/OpenCV_study/blob/244e4d845e6cdb6d687dfa9612342134f24d33cf/ImageProcessing/image/Threshold_Binary.png)   
 	* src(x,y) 즉, 이미지 픽셀값(intensity)이 *Thresh*보다 높으면 새로운 Pixel Intensity가 *MaxVal*로 설정된다 MaxVal은 0~255 기준으로 255이다.   
 	* 반대로 낮으면, 0으로 바꾼다   
 
 ## Threshold Binary, Inverted
 
 ![Binary_Inverted](https://docs.opencv.org/3.4/Threshold_Tutorial_Theory_Binary_Inverted.png)   
+![binarayInverted](https://github.com/saturnone1/OpenCV_study/blob/244e4d845e6cdb6d687dfa9612342134f24d33cf/ImageProcessing/image/Threshold_binary_Inverted.png)   
 	* 말 그대로 Binary의 반대이다.
 
 ## Truncate
 
 ![Truncate](https://docs.opencv.org/3.4/Threshold_Tutorial_Theory_Truncate.png)   
-
+![Truncate2](https://github.com/saturnone1/OpenCV_study/blob/244e4d845e6cdb6d687dfa9612342134f24d33cf/ImageProcessing/image/Threshold_Truncate.png)   
 	* Threshold보다 높은 부분을 Threshold로 바꾼다
 
 ## Threshold to Zero
 
 ![Zero](https://docs.opencv.org/3.4/Threshold_Tutorial_Theory_Zero.png)   
+![zero](https://github.com/saturnone1/OpenCV_study/blob/244e4d845e6cdb6d687dfa9612342134f24d33cf/ImageProcessing/image/Threshold_zero.png)   
 	* Threshold보다 높은 부분만 그대로 두고 나머지를 0으로 바꾼다
 
 ## Threshold to Zero, Inverted
 
-![ZeroInverted](https://docs.opencv.org/3.4/Threshold_Tutorial_Theory_Zero_Inverted.png)
+![ZeroInverted](https://docs.opencv.org/3.4/Threshold_Tutorial_Theory_Zero_Inverted.png)   
+![zeroinverted](https://github.com/saturnone1/OpenCV_study/blob/244e4d845e6cdb6d687dfa9612342134f24d33cf/ImageProcessing/image/Threshold_Zero_Inverted.png)   
 	* Threshold보다 높은 부분만 0으로 만들고 나머지는 그대로 둔다
 
 #### 의문점
