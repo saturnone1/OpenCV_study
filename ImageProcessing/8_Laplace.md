@@ -18,9 +18,9 @@ borderType	Pixel extrapolation method, see BorderTypes. BORDER_WRAP is not suppo
 ```
 
 * ksize == 1, Kernel: 
-| 0  1  0 |
-| 1 -4  1 |
-| 0  1  0 |
+| 0  1  0 |   
+| 1 -4  1 |   
+| 0  1  0 |   
 
 # Theory
 
