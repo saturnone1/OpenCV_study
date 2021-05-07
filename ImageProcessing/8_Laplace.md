@@ -32,7 +32,7 @@ borderType	Pixel extrapolation method, see BorderTypes. BORDER_WRAP is not suppo
 
 ## Laplacian Operator
 자주 본 이계도 방정식이다.   넘기도록 하자.
-
+![func](https://github.com/saturnone1/OpenCV_study/blob/b4c16ac5ae710685dead0ea20de8ca40de8e79bf/ImageProcessing/image/Laplace_function.png)   
 
 # Result
 
