@@ -73,7 +73,7 @@ cv::Scharr(src, dst, ddepth, dx, dy, scale, delta, borderType)
 cv::Sobel(src, dst, ddepth, dx, dy, CV_SCHARR, scale, delta, borderType)
 ```
 
-#결과
+# 결과
 
 ![lena_line](https://docs.opencv.org/3.4/Sobel_Derivatives_Tutorial_Result.jpg)    
 
