@@ -42,7 +42,7 @@ Hough Transform을 수행하기 위해, 위의 직선을 *Polar System*으로 �
 
 * Hough Line
 ```cpp
-#cpp
+//cpp
 cv::HoughLines(image, lines, rho, theta, threshold, srn, stn, min_theta, max_theta)
 ```
 ```python
@@ -68,7 +68,7 @@ minLineLenght를 활용하여 짧은 라인은 무시합니다. 또한 한 Line�
 그냥 Hough Line을 쓰는 것보다 정확성과 성능이 좋고, Customizing하기 수월합니다.
 
 ```cpp
-#cpp
+//cpp
 cv::HoughLinesP(image,lines,rho,theta,threshold,minLineLength,maxLineGap)
 ```
 ```python
