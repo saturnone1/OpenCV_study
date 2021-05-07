@@ -57,7 +57,7 @@ rho   The resolution of the parameter r in pixels. We use 1 pixel.
 theta   The resolution of the parameter θ in radians. We use 1 degree (CV_PI/180)
 threshold   The minimum number of intersections to "*detect*" a line
 srn   For the multi-scale Hough transform, it is a divisor for the distance resolution rho   The coarse accumulator distance resolution is rho and the accurate accumulator resolution is rho/srn. If both srn=0 and stn=0 , the classical Hough transform is used. Otherwise, both these parameters should be positive.
-stn: For the multi-scale Hough transform, it is a divisor for the distance resolution theta.
+stn   For the multi-scale Hough transform, it is a divisor for the distance resolution theta.
 min_theta   For standard and multi-scale Hough transform, minimum angle to check for lines. Must fall between 0 and max_theta.
 max_theta   For standard and multi-scale Hough transform, maximum angle to check for lines. Must fall between min_theta and CV_PI.
 ```
