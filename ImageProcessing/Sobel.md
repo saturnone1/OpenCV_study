@@ -39,7 +39,7 @@
 	![hor](https://github.com/saturnone1/OpenCV_study/blob/78a597d205987cbc8ed3b518d6d107eaf9c21dce/ImageProcessing/image/Sobel_hor.png)   
 	* Vertical   
 	![ver](https://github.com/saturnone1/OpenCV_study/blob/78a597d205987cbc8ed3b518d6d107eaf9c21dce/ImageProcessing/image/Sobel_ver.png)   
-2. 결과 Gaussian output Image 생성: x,y 모두 고려한 방법, 두가지 중 한가지를 선택하여 연산
+2. 결과 Gaussian output Image 생성: x,y 모두 고려한 방법, 두가지 중 한가지를 선택하여 연산   
 ![result](https://github.com/saturnone1/OpenCV_study/blob/78a597d205987cbc8ed3b518d6d107eaf9c21dce/ImageProcessing/image/Sobel_result.png)   
 ```cpp
 cv::Sobel(src, dst, ddepth, dx, dy, ksize, scale, delta, borderType)
