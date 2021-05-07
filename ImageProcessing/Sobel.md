@@ -17,7 +17,7 @@
 
 ![function](https://docs.opencv.org/3.4/Sobel_Derivatives_Tutorial_Theory_Intensity_Function.jpg)    
 
-	**x축: 시간(t) y축: 픽셀값**      
+**x축: 시간(t) y축: 픽셀값**      
 
 위와 같이 픽셀 값의 변화량이 가장 큰 지점이 분명히 존재하게 됩니다.   
 **Sobel Derivative는 픽셀 값의 변화량이 가장 큰 지점을 가장자리**로 추정하는 것입니다.    
