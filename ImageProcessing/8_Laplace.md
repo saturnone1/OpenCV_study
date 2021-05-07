@@ -17,10 +17,10 @@ delta	Optional delta value that is added to the results prior to storing them in
 borderType	Pixel extrapolation method, see BorderTypes. BORDER_WRAP is not supported.
 ```
 
-* ksize == 1, Kernel: 
-| 0  1  0 |
-| 1 -4  1 |
-| 0  1  0 |
+* ksize == 1, Kernel:     
+| 0  1  0 |   
+| 1 -4  1 |   
+| 0  1  0 |   
 
 # Theory
 
@@ -31,8 +31,8 @@ borderType	Pixel extrapolation method, see BorderTypes. BORDER_WRAP is not suppo
 2nd Derivative는 **0**인 지점이다. 그러나 수학적인 문제가 생긴다. 2nd Derivative가 아니더라도 0인 지점이 있을 수 있는 것이다. 이 지점에 대해서는 따로 Filtering 작업을 해준다.   
 
 ## Laplacian Operator
-자주 본 이계도 방정식이다.   넘기도록 하자.
-
+자주 본 이계도 방정식이다.   넘기도록 하자.   
+![func](https://github.com/saturnone1/OpenCV_study/blob/b4c16ac5ae710685dead0ea20de8ca40de8e79bf/ImageProcessing/image/Laplace_function.png)   
 
 # Result
 
