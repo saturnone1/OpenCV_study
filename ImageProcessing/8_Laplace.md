@@ -17,7 +17,7 @@ delta	Optional delta value that is added to the results prior to storing them in
 borderType	Pixel extrapolation method, see BorderTypes. BORDER_WRAP is not supported.
 ```
 
-* ksize == 1, Kernel: 
+* ksize == 1, Kernel:     
 | 0  1  0 |   
 | 1 -4  1 |   
 | 0  1  0 |   
