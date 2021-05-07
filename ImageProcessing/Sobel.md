@@ -36,11 +36,11 @@
 1. Horizontal, Vertical에 각각 Kernel 적용하여 Gaussian output Image 출력
 	* Horizontal   
 	I: Image   
-
+	![hor](https://github.com/saturnone1/OpenCV_study/blob/78a597d205987cbc8ed3b518d6d107eaf9c21dce/ImageProcessing/image/Sobel_hor.png)   
 	* Vertical   
-
+	![ver](https://github.com/saturnone1/OpenCV_study/blob/78a597d205987cbc8ed3b518d6d107eaf9c21dce/ImageProcessing/image/Sobel_ver.png)   
 2. 결과 Gaussian output Image 생성: x,y 모두 고려한 방법, 두가지 중 한가지를 선택하여 연산
-
+![result](https://github.com/saturnone1/OpenCV_study/blob/78a597d205987cbc8ed3b518d6d107eaf9c21dce/ImageProcessing/image/Sobel_result.png)   
 ```cpp
 cv::Sobel(src, dst, ddepth, dx, dy, ksize, scale, delta, borderType)
 ```
@@ -65,7 +65,7 @@ ksize = CV_SCHARR 로 잡았을 때, 3x3의 SCHARR 커널이 적용됩니다.
 ## Scharr
 
 Kernel Size가 3일 때, Sobel Kernel은 부정확성이 높아집니다. 당연한 것이, Sobel은 Derivatie 미분값을 근사하여 사용하기 때문입니다. 이는 다음의 **Scharr()** Function을 이용하면 해결됩니다. Kernel은 다음과 같습니다.   
-
+![Scharr](https://github.com/saturnone1/OpenCV_study/blob/78a597d205987cbc8ed3b518d6d107eaf9c21dce/ImageProcessing/image/Scharr.png)   
 
 ```cpp
 //아래 두 함수는 동일합니다
