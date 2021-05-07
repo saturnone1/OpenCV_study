@@ -7,10 +7,13 @@
 
 # Steps
 
-1. 노이즈 필터링: Gaussian Filter 적용   
+1. 노이즈 필터링: Gaussian Filter 적용   	
+   ![gaussian](https://github.com/saturnone1/OpenCV_study/blob/e4839960d7e5e62495bd27d1251a76e513c5924f/ImageProcessing/image/canny_gaussian.png)   
 2. Intensity 측정. Sobel 방법 사용   
-3. **Non-Maximum suppression** 적용. Edge의 후보들 중에서 값이 낮게 측정된 것들을 없애버린다. Candidate Edge들 만이 남게 된다.   
-4. **Hysteresis** 3번의 적용 원칙:
+	![Sobel](https://github.com/saturnone1/OpenCV_study/blob/e4839960d7e5e62495bd27d1251a76e513c5924f/ImageProcessing/image/canny_sobel.png)   
+	![result](https://github.com/saturnone1/OpenCV_study/blob/e4839960d7e5e62495bd27d1251a76e513c5924f/ImageProcessing/image/canny_result.png)   
+4. **Non-Maximum suppression** 적용. Edge의 후보들 중에서 값이 낮게 측정된 것들을 없애버린다. Candidate Edge들 만이 남게 된다.   
+5. **Hysteresis** 3번의 적용 원칙:
 ```
 	a. Pixel Gradient(Sobel적용 값)이 upper Threshold보다 크다면, Edge로 승인된다.   
 	b. Pixel Gradient(Sobel적용 값)이 lower Threshold보다 작다면, 탈락한다.   
