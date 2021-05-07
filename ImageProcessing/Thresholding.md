@@ -78,8 +78,8 @@ lowerb	inclusive lower boundary array or a scalar.
 upperb	inclusive upper boundary array or a scalar.
 dst	output array of the same size as src and CV_8U type.
 ```
-* Lowerb : 
-* Upperb : 
+* Lowerb : 범위의 Min을 뜻하는 Scalar Array
+* Upperb : 범위의 Max를 뜻하는 Scalar Array
 
 ![HSV](https://docs.opencv.org/3.4/Threshold_inRange_HSV_colorspace.jpg)   
 
