@@ -22,6 +22,7 @@
 
 # Usage
 
+* CPP
 ```cpp
 cv::Canny(image,threshold1,threshold2,apertureSize = 3 , L2gradient = false)
 
@@ -29,6 +30,7 @@ apertureSize: canny Edge에서 사용할 Sobel Gradient Size
 L2gradient: (True: √g1^2 + g2^2)  (False: |g1|+|g2|)
 ```
 
+* Python
 ```python
 cv.Canny(image, threshold1, threshold2[, edges[, apertureSize[, L2gradient]]]) -> edges
 cv.Canny(dx, dy, threshold1, threshold2[, edges[, L2gradient]]) -> edges
