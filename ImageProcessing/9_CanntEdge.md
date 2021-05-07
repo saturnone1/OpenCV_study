@@ -7,7 +7,7 @@
 
 # Steps
 
-1. 노이즈 필터링: Gaussian Filter 적용   	
+1. 노이즈 필터링: Gaussian Filter 적용      	
    ![gaussian](https://github.com/saturnone1/OpenCV_study/blob/e4839960d7e5e62495bd27d1251a76e513c5924f/ImageProcessing/image/canny_gaussian.png)   
 2. Intensity 측정. Sobel 방법 사용   
 	![Sobel](https://github.com/saturnone1/OpenCV_study/blob/e4839960d7e5e62495bd27d1251a76e513c5924f/ImageProcessing/image/canny_sobel.png)   
