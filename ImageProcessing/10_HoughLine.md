@@ -17,6 +17,7 @@ b. Polar coordinate system: (r,θ)
 Hough Transform을 수행하기 위해, 위의 직선을 *Polar System*으로 표현합니다:   
 우리는 어떤 점 (x,y)를 지나는 무수히 많은 직선을 표현할 수가 있는데 이는 다음과 같습니다.
 
+![polar](https://github.com/saturnone1/OpenCV_study/blob/6a97c60f6c9dfec1a61b1799308cb2c52882df56/ImageProcessing/image/Hough_polar.png)   
 **r = xcosθ + ysinθ**      
 1. **In General: rθ = x0cosθ + y0sinθ**: (x0,y0)를 지나는 직선의 (rθ,θ)표현     
 2. x0 = 8, y0 = 6일 때, 또한 (x0,y0)를 지나는 무수히 많은 직선들의 (r,θ)를 표현하면 다음과 같은 곡선이 생성됩니다   
@@ -61,6 +62,8 @@ stn   For the multi-scale Hough transform, it is a divisor for the distance reso
 min_theta   For standard and multi-scale Hough transform, minimum angle to check for lines. Must fall between 0 and max_theta.
 max_theta   For standard and multi-scale Hough transform, maximum angle to check for lines. Must fall between min_theta and CV_PI.
 ```
+![sudoku](https://raw.githubusercontent.com/opencv/opencv/3.4/samples/data/sudoku.png)   
+![sudoku2](https://docs.opencv.org/3.4/hough_lines_result1.png)   
 
 * Hough Line Probability
 
