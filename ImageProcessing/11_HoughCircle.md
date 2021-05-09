@@ -32,5 +32,7 @@ Line에서 사용된 *(r,θ)*와는 다르게, Cirle에서는 아래의 세 para
 
 ## What does this program do? (실행 방법)
 
-1. 이미지 로드 및 노이즈 제거를 위한 blur적용 
-2. *Hough Circle*알고리즘 적용
+1. 이미지 로드 및 노이즈 제거를 위한 blur적용    
+2. *Hough Circle*알고리즘 적용   
+
+![CircleEx](https://docs.opencv.org/3.4/Hough_Circle_Tutorial_Result.png)   
