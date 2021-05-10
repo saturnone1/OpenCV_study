@@ -54,3 +54,28 @@ ranges	Array of the dims arrays of the histogram bin boundaries in each dimensio
 uniform	Flag indicating whether the histogram is uniform or not (see above).
 accumulate	Accumulation flag. If it is set, the histogram is not cleared in the beginning when it is allocated. This feature enables you to compute a single histogram from several sets of arrays, or to update the histogram in time.
 ```
+
+## Normalize
+
+[0,255]범위로 다시 넣기위한 Normalize 작업이 필요하다    
+
+```cpp
+//cpp
+cv::normalize(b_hist, b_hist, 0, histImage.rows, NORM_MINMAX, -1, Mat() );
+```
+```python
+# python
+cv.normalize(src, dst[, alpha[, beta[, norm_type[, dtype[, mask]]]]]) -> dst
+```
+```
+# Parameter
+b_hist: Input array
+b_hist: Output normalized array (can be the same)
+0 and histImage.rows: For this example, they are the lower and upper limits to normalize the values of r_hist
+NORM_MINMAX: Argument that indicates the type of normalization (as described above, it adjusts the values between the two limits set before)
+-1: Implies that the output normalized array will be the same type as the input
+Mat(): Optional mask
+```
+
+![image](https://docs.opencv.org/3.4/Histogram_Calculation_Original_Image.jpg)   
+![hist](https://docs.opencv.org/3.4/Histogram_Calculation_Result.jpg)   
