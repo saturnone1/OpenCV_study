@@ -28,7 +28,7 @@ cv.equalizeHist(src[,dst])->dst
 ![cumulative](https://docs.opencv.org/3.4/Histogram_Equalization_Theory_2.jpg)   
 **누적 분포 함수**
 
-누적 분포 함수 CDF는 위와 같다. 그럼 이 누적분포를 어떻게 사용하는가? 간단하다. 0~255의 각 Intensity 마다 누적 분포가 정해질 것이고, 누적분포 확률을 각 Intensity(pixel Value)에 곱해준 후에 0~255의 값 안으로 Normalize해 주면 완성된다. 그것을 표현한 식이 다음과 같다.   
+누적 분포 함수 CDF는 위와 같다. 그럼 이 누적분포를 어떻게 사용하는가? 간단하다. [0,255]의 각 Intensity 마다 누적 분포가 정해질 것이고, 누적분포 확률을 각 Intensity(pixel Value)에 곱해준 후에 [0,255]의 값 안으로 Normalize해 주면 완성된다. 그것을 표현한 식이 다음과 같다.   
 
 **equalized(x,y)=H′(src(x,y))**    
 
