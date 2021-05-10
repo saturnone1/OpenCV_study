@@ -12,7 +12,7 @@ cv.convexHull(points[,hull[,clockwise[,returnPoints]]]) -> hull
 ```
 
 점 집합의 볼록 껍질을 찾습니다.   
-cv::convexHull 함수는 *O(NlogN)*복잡도를 갖는 Sklansky 알고리즘을 사용하여 2D점 집합의 볼록 껍질을 찾습니다 .    
+cv::convexHull 함수는 **_O(NlogN)_** 복잡도를 갖는 Sklansky 알고리즘을 사용하여 2D점 집합의 볼록 껍질을 찾습니다 .    
 
 * Parameter   
 ```
