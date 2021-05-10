@@ -16,6 +16,7 @@ method	Comparison method, see HistCompMethods
 
 Historgram을 비교하기 위한 방법이다. 이는 영상 처리의 궁극적인 목적이라 할 수 있는 objectDetection을 하기 위한 초기 단계의 방법이라고 이해하면 된다. 이미지의 Channel별로 Histogram을 분석하면 화면 내에서 가장 많이 보이는 물체의 색분포를 알 수 있다.   
 
+![method](https://github.com/saturnone1/OpenCV_study/blob/5e9cd9823bae2752f74a0b8cdb53eacdcd72d888/ImageProcessing/image/comparison.png)   
 위는 Method 파라미터 네 가지 방법을 소개한다.    
 
 # Example
