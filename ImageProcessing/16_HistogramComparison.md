@@ -22,13 +22,14 @@ Historgram을 비교하기 위한 방법이다. 이는 영상 처리의 궁극�
 
 ![0](https://docs.opencv.org/3.4/Histogram_Comparison_Source_0.jpg)
 ![1](https://docs.opencv.org/3.4/Histogram_Comparison_Source_1.jpg)
-![2](https://docs.opencv.org/3.4/Histogram_Comparison_Source_2.jpg)
+![2](https://docs.opencv.org/3.4/Histogram_Comparison_Source_2.jpg)   
 **Image Base/ Test1/ Test2**   
 
 실습에서는 각기 다른 빛의 세기로 찍은 이미지에 대해 진행하였지만 중요치 않을 수 있다고 생각했다. 이 실험 내에서는 이미지를 HSV파일로 변환한 후에 H-S에 대해서만 진행하도록 Channel을 CalcHist에서 제한하기 때문이다. 그러나 결과를 보고 생각이 달라졌다.   
 
-|Method|Base|Base-Half|Test1|Test2
-|*Correlation*|1.000000	0.880438|0.20457|0.0664547|
+|Method|Base|Base-Half|Test1|Test2|
+|-------------|----------|----------|---------|--------|
+|*Correlation*|1.000000	0.880438|0.20457|0.0664547|0.0664547|
 |*Chi-square*|0.000000|4.6834|2697.98|4763.8|
 |*Intersection*|18.8947|13.022|5.44085|2.58173|
 |*Bhattacharyya*|0.000000|0.237887|0.679826|0.874173|
