@@ -56,3 +56,4 @@ Template image(patch)로 설정한 이미지와 비슷한(match)부분을 찾습
 
 다음의 Matching Method 중에서 골라서 사용하시면 됩니다.   
 
+![matchingmethod](https://github.com/saturnone1/OpenCV_study/blob/360422f39e2b3336af23c6d539ca47e039199d82/ImageProcessing/image/templateMatching.png)   
