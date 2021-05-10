@@ -89,7 +89,8 @@ cv.minAreaRect(points)->retval
 이 함수는 지정된 점 집합에 대해 최소 영역 경계 사각형 (회전 가능)을 계산하고 반환합니다. 개발자는 데이터가 포함 된 Mat 요소 경계에 가까울 때 반환 된 RotatedRect에 음수 인덱스가 포함될 수 있음을 명심해야합니다.
 
 ```cpp
-cv:fitEllipse(points)
+//cpp
+cv::fitEllipse(points)
 ```
 ```python
 # python
