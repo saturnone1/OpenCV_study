@@ -59,7 +59,7 @@ npairs	number of index pairs in fromTo.
 * 이제 아래와 같은 다른 손 이미지 (테스트 이미지)가 있다고 가정 해 봅시다.(해당 히스토그램 포함):
 
 ![hand2](https://docs.opencv.org/3.4/Back_Projection_Theory2.jpg)   
-1[histo2](https://docs.opencv.org/3.4/Back_Projection_Theory3.jpg)   
+![histo2](https://docs.opencv.org/3.4/Back_Projection_Theory3.jpg)   
 
 * 이제 우리가 원하는 것은 *Model Histogram*을 이용하여, 테스트 이미지에서 피부 영역을 감지하는 것입니다. 단계는 다음과 같습니다.
 1. 테스트 이미지의 각 픽셀 데이터를 수집하고 해당 픽셀의 해당 Model Histogram bin 위치를 찾습니다.   
