@@ -77,23 +77,23 @@ labelType	Type of the label array to build, see DistanceTransformLabelTypes.
 
 * labels 및 labelType은 거의 사용하지 않습니다.   
 * distanceType의 종류는 다음과 같습니다.   
-|Type|Explan.|
-|-----|-------------|
-|DIST_USER|User defined distance|
-|DIST_L1|distance = |x1-x2| + |y1-y2||
-|DIST_L2|the simple euclidean distance|
-|DIST_C|distance = max(|x1-x2|,|y1-y2|)|
-|DIST_L12|L1-L2 metric: distance = 2(sqrt(1+x*x/2) - 1))|
-|DIST_FAIR|distance = c^2(|x|/c-log(1+|x|/c)), c = 1.3998|
-|DIST_WELSCH|distance = c^2/2(1-exp(-(x/c)^2)), c = 2.9846|
-|DIST_HUBER|distance = |x|<c ? x^2/2 : c(|x|-c/2), c=1.345|
+    |Type| Explan |
+    |------------|---------------|
+    |DIST_USER|User defined distance|   
+    |DIST_L1|distance = &#124;x1-x2&#124; + &#124;y1-y2&#124;|   
+    |DIST_L2|the simple euclidean distance|   
+    |DIST_C|distance = max\(&#124;x1-x2&#124;,&#124;y1-y2&#124;\)|   
+    |DIST_L12|L1-L2 metric: distance = 2\(sqrt\(1+x*x/2\) - 1\)\)|   
+    |DIST_FAIR|distance = c^2\(\|x\|/c-log\(1+\|x\|/c\)\), c = 1.3998|   
+    |DIST_WELSCH|distance = c^2/2(1-exp(-(x/c)^2)), c = 2.9846|   
+    |DIST_HUBER|distance = \|x\|\<c \? x^2/2 : c\(\|x\|-c/2\), c=1.345|   
 
 * masksize의 종류는 다음과 같습니다   
-|Type|Explan.|
-|-----|--------------|
-|DIST_MASK_3|mask=3|
-|DIST_MASK_5|mask=5|
-|DIST_MASK_PRECISE||
+    |Type|Explan|
+    |---|---|
+    |DIST_MASK_3|mask=3|
+    |DIST_MASK_5|mask=5|
+    |DIST_MASK_PRECISE|
 
 ## Dilate로 각 카드의 최상위 부분을 수집
 앞에서 했던 부분이기 때문에 넘어가겠다.    
