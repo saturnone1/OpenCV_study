@@ -12,7 +12,7 @@ cv.convexHull(points[,hull[,clockwise[,returnPoints]]]) -> hull
 ```
 
 점 집합의 볼록 껍질을 찾습니다.   
-cv::convexHull 함수는 *O(NlogN)*복잡도를 갖는 Sklansky 알고리즘을 사용하여 2D점 집합의 볼록 껍질을 찾습니다 .    
+cv::convexHull 함수는 **_O(NlogN)_** 복잡도를 갖는 Sklansky 알고리즘을 사용하여 2D점 집합의 볼록 껍질을 찾습니다 .    
 
 * Parameter   
 ```
@@ -43,9 +43,11 @@ point와 hull은 다른 Array이어야만 합니다. 내부 프로세싱은 지�
 이 함수는 지정된 점 집합 또는 회색조 이미지의 0이 아닌 픽셀에 대해 가장 위쪽을 기준으로 경계 사각형을 계산하고 반환합니다.    
 
 ```cpp
+//cpp
 cv::boundingRect(array)
 ```
 ```python
+# python
 cv.boundingRect(array) -> retval
 ```
 * Array에는 GrayScale image 혹은 2D Point set(std::vector or MAT)이 들어가면 됩니다.   
@@ -89,7 +91,8 @@ cv.minAreaRect(points)->retval
 이 함수는 지정된 점 집합에 대해 최소 영역 경계 사각형 (회전 가능)을 계산하고 반환합니다. 개발자는 데이터가 포함 된 Mat 요소 경계에 가까울 때 반환 된 RotatedRect에 음수 인덱스가 포함될 수 있음을 명심해야합니다.
 
 ```cpp
-cv:fitEllipse(points)
+//cpp
+cv::fitEllipse(points)
 ```
 ```python
 # python
