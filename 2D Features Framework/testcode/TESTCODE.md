@@ -10,7 +10,7 @@
 * SimpleBlob : 특정 크기 이상의 특징만 찾아냄
 
 ## 알고리즘 특징
-* ORB
+* ORB   
 BRIEF 알고리즘을 개선한 알고리즘이다. 특징점 검출 방법으로 FAST를 사용하며, 회전과 방향을 고려하기 때문에 속도가 빠른 FAST 방식이다.
 
 ```
@@ -26,7 +26,7 @@ patchSize(optional): 디스크립터의 패치 크기 (default=31)
 fastThreshold(optional): FAST에 사용할 임계 값 (default=20)
 ```
    
-* SIFT
+* SIFT   
 Harris Corner검출에 추가적으로 이미지 피라미드 방식을 이용하여 특징점 검출 성능을 높였다.
 ```
 # 파라미터
@@ -37,7 +37,7 @@ edgeThreshold: 필터링할 엣지 문턱 값
 sigma: 이미지 피라미드 0 계층에서 사용할 가우시안 필터의 시그마 값
 ```
    
-* SURF
+* SURF   
 피라미드를 사용하는 SIFT의 속도가 느리기 때문에 이 단점을 보완하기 위해서 피라미드 대신 필터의 크기를 변화시키는 방식으로 성능을 개선했다.
 
 ```
@@ -50,7 +50,7 @@ upright(optional): 방향 계산 플래그 (default=False), True: 방향 무시,
 ```
 
 ## Matcher 선택
-* Brute Force Matcher
+* Brute Force Matcher   
 queryDescriptors와 trainDescriptors를 하나하나 확인해 매칭되는지 판단하는 알고리즘
 ```
 # 파라미터
@@ -63,7 +63,7 @@ normType: 거리 측정 알고리즘 (cv2.NORM_L1, cv2.NORM_L2(default), cv2.NOR
 crosscheck: 상호 매칭이 되는 것만 반영 (default=False), 불필요한 매칭 제거, 속도 저하시킴
 ```
 
-* FLANN Matcher(Fast Library for Approximate Nearest Neighbors Matching)
+* FLANN Matcher(Fast Library for Approximate Nearest Neighbors Matching)   
 BFMatcher는 모든 디스크립터를 전수 조사하므로 이미지 사이즈가 클 경우 속도가 굉장히 느립니다. 그보다 향상된 FLANN은 이웃하는 디스크립터끼리 비교를 합니다. 이웃하는 디스크립터를 찾기 위해 FLANN 알고리즘 함수에 인덱스 파라미터와 검색 파라미터를 전달해야 합니다.
 
 ```
@@ -86,7 +86,7 @@ searchParams: 검색 파라미터
 ```
 
 # 특징 매칭 Feature Matching 
-* match
+* match   
 한 개의 최적 매칭만 받습니다.
 ```
 # 파라미터
@@ -96,7 +96,7 @@ mask(optional): 매칭 진행 여부 마스크
 matches: 매칭 결과, DMatch 객체의 리스트
 ```
 
-* knnMatch (사용)
+* knnMatch (사용)   
 K - nearest neighbor 알고리즘을 적용한 매칭법입니다. query Descriptor(기준 이미지에서 생성됨) 한 개당 trainDescriptor(대상 이미지에서 생성됨)에서 찾아서 결과로 반환합니다. 가장 비슷한 반환값들만 선택하여 받아온 상태에서 시작하기 때문에 빠릅니다. 
 ```
 # 파라미터
@@ -104,7 +104,7 @@ k: 매칭할 근접 이웃 개수
 compactResult(optional): True: 매칭이 없는 경우 매칭 결과에 불포함 (default=False)
 ```
 
-* radiusMatch
+* radiusMatch   
 maxDistance 이내의 거리 매칭 방법
 ```
 maxDistance: 매칭 대상 거리
