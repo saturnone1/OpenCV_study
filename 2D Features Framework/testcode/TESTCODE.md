@@ -66,7 +66,7 @@ crosscheck: 상호 매칭이 되는 것만 반영 (default=False), 불필요한 
 * FLANN Matcher(Fast Library for Approximate Nearest Neighbors Matching)   
 BFMatcher는 모든 디스크립터를 전수 조사하므로 이미지 사이즈가 클 경우 속도가 굉장히 느립니다. 그보다 향상된 FLANN은 이웃하는 디스크립터끼리 비교를 합니다. 이웃하는 디스크립터를 찾기 위해 FLANN 알고리즘 함수에 인덱스 파라미터와 검색 파라미터를 전달해야 합니다.
 
-```
+```bash
 # indexParams: 인덱스 파라미터 (dict 안에 저장)
 
 algorithm: 알고리즘 선택 키, 선택할 알고리즘에 따라 종속 키를 결정하면 됨 (0~6, 255 중 하나 선택)
@@ -76,6 +76,13 @@ algorithm: 알고리즘 선택 키, 선택할 알고리즘에 따라 종속 키�
     FLANN_INDEX_COMPOSITE=3: KD-트리, K-평균 혼합 인덱싱 (trees=4: 트리 개수, branching=32: 트리 분기 새수, iterations=11: 반복 횟수, centers_init=0: 초기 중심점 방식)
     FLANN_INDEX_LSH=6: LSH 인덱싱 (table_number: 해시 테이블 수, key_size: 키 비트 크기, multi_probe_level: 인접 버킷 검색)
     FLANN_INDEX_AUTOTUNED=255: 자동 인덱스 (target_precision=0.9: 검색 백분율, build_weight=0.01: 속도 우선순위, memory_weight=0.0: 메모리 우선순위, sample_fraction=0.1: 샘플 비율)
+
+# OpenCV 튜토리얼에서는 각 알고리즘에 대해 다음의 파라미터 형태를 사용할 것을 추천한다.
+SIFT, SURF : index_params = dict(algorithm = FLANN_INDEX_KDTREE, trees = 5)
+ORB: index_params= dict(algorithm = FLANN_INDEX_LSH,
+                   table_number = 6, # 12
+                   key_size = 12,     # 20
+                   multi_probe_level = 1) #2
 
 # searchParams: 검색 파라미터 (dict 안에 저장)
 
