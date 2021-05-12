@@ -17,7 +17,7 @@ def main():
     matcherType = args.mat
 
     img1 = cv.imread('image/woods3.jpg')
-    img2 = cv.imread('image/woods1.jpg')
+    img2 = cv.imread('image/woods4.jpg')
     gray1 = cv.cvtColor(img1, cv.COLOR_BGR2GRAY,0)
     gray2 = cv.cvtColor(img2, cv.COLOR_BGR2GRAY,0)
     print("Image Read Complete")
@@ -49,7 +49,7 @@ def main():
         matcher = cv.BFMatcher(cv.NORM_L2, crossCheck = True)
     
     # KNN Match
-    matches = matcher.knnMatch(desc1,desc2,k=2)
+    matches = matcher.knnMatch(desc1, desc2, k=2)
     print("Keypoint and Description and Macthing Complete")
 
     # Good Matching Point
