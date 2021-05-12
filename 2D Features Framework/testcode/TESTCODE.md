@@ -62,6 +62,8 @@ normType: 거리 측정 알고리즘 (cv2.NORM_L1, cv2.NORM_L2(default), cv2.NOR
 
 crosscheck: 상호 매칭이 되는 것만 반영 (default=False), 불필요한 매칭 제거, 속도 저하시킴
 ```
+각 normType의 수학식은 다음과 같습니다   
+![matcher](https://github.com/saturnone1/OpenCV_study/blob/6745c460e17bc0f6ae18a611428faa7dfa2076bd/2D%20Features%20Framework/testcode/image/matcher.png)
 
 * FLANN Matcher(Fast Library for Approximate Nearest Neighbors Matching)   
 BFMatcher는 모든 디스크립터를 전수 조사하므로 이미지 사이즈가 클 경우 속도가 굉장히 느립니다. 그보다 향상된 FLANN은 이웃하는 디스크립터끼리 비교를 합니다. 이웃하는 디스크립터를 찾기 위해 FLANN 알고리즘 함수에 인덱스 파라미터와 검색 파라미터를 전달해야 합니다.
