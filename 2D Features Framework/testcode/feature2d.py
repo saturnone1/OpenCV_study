@@ -23,8 +23,6 @@ def main():
     print("Image Read Complete")
 
     # ORB, SURF
-    # ORB: https://docs.opencv.org/3.4/db/d95/classcv_1_1ORB.html#adc371099dc902a9674bd98936e79739c
-    # SURF: https://docs.opencv.org/3.4/d5/df7/classcv_1_1xfeatures2d_1_1SURF.html
     if algorithm == 'ORB':
         detector = cv.ORB_create(nfeatures=500, WTA_K = 3)
     elif algorithm == 'SURF':
@@ -39,6 +37,8 @@ def main():
             index_params= dict(algorithm = 6, table_number = 6, key_size = 12, multi_probe_level = 1)
         elif algorithm == 'SURF':
             index_params = dict(algorithm = FLANN_INDEX_KDTREE, trees = 5)
+
+        #checking numbers 
         search_params = dict(checks=100)
         matcher = cv.FlannBasedMatcher(index_params,search_params)
 
@@ -57,8 +57,9 @@ def main():
     good_matches = [m for m,n in matches if m.distance < ratio_thresh * n.distance]
 
     result = cv.drawMatches(img1, kp1, img2, kp2, good_matches, None, flags=2)
-
-    cv.imshow("ORB+FLANN",result)
+    
+    imgName = algorithm + "+" + matcherType
+    cv.imshow(imgName,result)
     cv.waitKey()
     cv.destroyAllWindows()
 
