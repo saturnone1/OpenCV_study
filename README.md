@@ -90,7 +90,7 @@ OpenCV Transition Guide: [OpenCV_Guide](https://docs.opencv.org/3.4/db/dfa/tutor
   pkg-config
   ```
   위의 패키지들은 Ubuntu Linux 시스템의 universe repository에 있을 수 있습니다. 만약 Repository를 Enable하지 않으셨다면,
-  다음과 같은 과정을 수행하면 됩니다.
+  다음의 과정을 수행하면 됩니다.
   
   ```bash
   $ sudo apt-add-repository universe
