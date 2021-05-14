@@ -1,22 +1,24 @@
 # ! /usr/bin/env python
 # -*- coding: utf-8 -*-
 
+import caddy_module
 import cv2 as cv
 import numpy as np
 import argparse
+import rospy
+from sensor_msgs import Image
 
 #알고리즘 생성
 def keyDetect(algorithm, gray1,gray2):
     # ORB, SURF
     if algorithm == 'ORB':
-        detector = cv.ORB_create(nfeatures=1000, WTA_K = 3)
+        detector = cv.ORB_create(nfeatures=500, WTA_K = 4)
     elif algorithm == 'SURF':
-        detector = cv.xfeatures2d.SURF_create(hessianThreshold = 200)
+        detector = cv.xfeatures2d.SURF_create(hessianThreshold = 100)
 
     kp1, desc1 = detector.detectAndCompute(gray1, None)
     kp2, desc2 = detector.detectAndCompute(gray2, None)
 
-    print("Descriptor Type:%s Shape:%s", type(desc1), desc1.shape)
     return kp1,kp2, desc1,desc2
 
 #Matcher 생성
@@ -24,7 +26,7 @@ def setMatcher(algorithm, matcherType):
     if matcherType == 'FLANN':
         #different parameter dictionary for algorithms
         if algorithm == 'ORB':
-            index_params= dict(algorithm = 6, table_number = 6, key_size = 12, multi_probe_level = 2)
+            index_params= dict(algorithm = 6, table_number = 6, key_size = 12, multi_probe_level = 1)
         elif algorithm == 'SURF':
             index_params = dict(algorithm = 1, trees = 5)
 
@@ -59,7 +61,6 @@ def setImg(img1,img2):
     
     hsv_split1 = cv.split(hsv1)
     hsv_split2 = cv.split(hsv2)
-    print("Image Read Complete: HSV Array")
 
     return hsv_split1, hsv_split2
 
@@ -84,7 +85,7 @@ def hsv_combine(hsv1, hsv2, algorithm):
     desc1R = np.array([])
     desc2R = np.array([])
 
-    for i in range(len(hsv1)-1):
+    for i in range(len(hsv1)):
         #Keypoint, Descriptor 생성
         kp1,kp2,desc1,desc2 = keyDetect(algorithm,hsv1[i],hsv2[i]) 
         if i == 0:
@@ -107,16 +108,25 @@ def hsv_combine(hsv1, hsv2, algorithm):
     return kp1R, kp2R, desc1R, desc2R
 
 def main():
-    img1 = cv.imread('image/iu1.jpg')
-    img2 = cv.imread('image/iu2.jpg')
+    caddy_module.Trackbar("물체 구분기")
+    
+    #ros init
+    rospy.init_node('img_point',anonymous=True)
+    pub = rospy.Publisher("MatchingOutput", Image, queue_size= 10)
+
+    img1 = cv.imread('image/golfwoman1.jpg')
+    img2 = cv.imread('image/golfwoman2.jpg')
+    
+    img1_kmc = caddy_module.callback_does(img1)
+    img2_kmc = caddy_module.callback_does(img2)
 
     #커맨드 입력 파서
     algorithm, matcherType = commandparser()
 
     #HSV 분할 Array
-    hsv1, hsv2 = setImg(img1,img2)
-
-    #HSV에서 개별로 keypoing, description을 생성 후 결합
+    hsv1, hsv2 = setImg(img1_kmc,img2_kmc)
+    
+    #HSV에서 개별로 keypoint, description을 생성 후 결합
     kp1,kp2,desc1,desc2 = hsv_combine(hsv1,hsv2,algorithm)
 
     #Matcher생성 및 matching
@@ -129,10 +139,8 @@ def main():
     result = cv.drawMatches(img1, kp1, img2, kp2, good_matches, None, flags=2)
 
     #이미지 출력
-    imgName = algorithm + "+" + matcherType
-    cv.imshow(imgName,result)
-    cv.waitKey()
-    cv.destroyAllWindows()
+    pub.publish(result)
+    rospy.spin()
 
 if __name__ == "__main__":
     main()
