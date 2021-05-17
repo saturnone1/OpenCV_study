@@ -21,12 +21,17 @@ def color(x):
     color_space = x
 
 #커맨드 라인 명령어 생성자
-def Trackbar(name):
+def makeTrackbar(name):
     cv.namedWindow(name)
     # create trackbars for color change
     cv.createTrackbar('KNumber',name,10,30, kmc)
     cv.createTrackbar('maxIter',name,5,30, iter)
     cv.createTrackbar('ColorSpace',name,0,2, color)
+
+def seeTrackbar(name):
+    cv.getTrackbarPos('KNumber',name)
+    cv.getTrackbarPos('maxIter',name)
+    cv.getTrackbarPos('ColorSpace',name)
 
 def kmeans_clustering(img,K,iteration,color_space):
     shape = img.shape

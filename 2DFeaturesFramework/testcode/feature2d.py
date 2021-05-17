@@ -1,12 +1,10 @@
-# ! /usr/bin/env python
+# !/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 import caddy_module
 import cv2 as cv
 import numpy as np
 import argparse
-import rospy
-from sensor_msgs import Image
 
 #알고리즘 생성
 def keyDetect(algorithm, gray1,gray2):
@@ -108,20 +106,16 @@ def hsv_combine(hsv1, hsv2, algorithm):
     return kp1R, kp2R, desc1R, desc2R
 
 def main():
-    caddy_module.Trackbar("물체 구분기")
-    
-    #ros init
-    rospy.init_node('img_point',anonymous=True)
-    pub = rospy.Publisher("MatchingOutput", Image, queue_size= 10)
+    caddy_module.makeTrackbar("Detector")
 
     img1 = cv.imread('image/golfwoman1.jpg')
     img2 = cv.imread('image/golfwoman2.jpg')
-    
-    img1_kmc = caddy_module.callback_does(img1)
-    img2_kmc = caddy_module.callback_does(img2)
 
     #커맨드 입력 파서
     algorithm, matcherType = commandparser()
+
+    img1_kmc = caddy_module.callback_does(img1)
+    img2_kmc = caddy_module.callback_does(img2)
 
     #HSV 분할 Array
     hsv1, hsv2 = setImg(img1_kmc,img2_kmc)
@@ -137,10 +131,10 @@ def main():
 
     #draw Match
     result = cv.drawMatches(img1, kp1, img2, kp2, good_matches, None, flags=2)
-
-    #이미지 출력
-    pub.publish(result)
-    rospy.spin()
-
+	
+    cv.imshow("Detector",result)
+    cv.waitKey(0)
+    cv.cv2.destroyAllWindows()
+    
 if __name__ == "__main__":
     main()
