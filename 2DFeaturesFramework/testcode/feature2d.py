@@ -108,33 +108,35 @@ def hsv_combine(hsv1, hsv2, algorithm):
 def main():
     caddy_module.makeTrackbar("Detector")
 
-    img1 = cv.imread('image/golfwoman1.jpg')
-    img2 = cv.imread('image/golfwoman2.jpg')
+    img1 = cv.imread('image/woods1.jpg')
+    img2 = cv.imread('image/woods2.jpg')
 
     #커맨드 입력 파서
     algorithm, matcherType = commandparser()
 
-    img1_kmc = caddy_module.callback_does(img1)
-    img2_kmc = caddy_module.callback_does(img2)
+    while True:
+        img1_kmc = caddy_module.callback_does(img1)
+        img2_kmc = caddy_module.callback_does(img2)
 
-    #HSV 분할 Array
-    hsv1, hsv2 = setImg(img1_kmc,img2_kmc)
-    
-    #HSV에서 개별로 keypoint, description을 생성 후 결합
-    kp1,kp2,desc1,desc2 = hsv_combine(hsv1,hsv2,algorithm)
+        #HSV 분할 Array
+        hsv1, hsv2 = setImg(img1_kmc,img2_kmc)
+        
+        #HSV에서 개별로 keypoint, description을 생성 후 결합
+        kp1,kp2,desc1,desc2 = hsv_combine(hsv1,hsv2,algorithm)
 
-    #Matcher생성 및 matching
-    matcher = setMatcher(algorithm, matcherType)
+        #Matcher생성 및 matching
+        matcher = setMatcher(algorithm, matcherType)
 
-    #Matching 중에서 걸러냄
-    good_matches = match_knn(matcher,desc1,desc2)
+        #Matching 중에서 걸러냄
+        good_matches = match_knn(matcher,desc1,desc2)
 
-    #draw Match
-    result = cv.drawMatches(img1, kp1, img2, kp2, good_matches, None, flags=2)
-	
-    cv.imshow("Detector",result)
-    cv.waitKey(0)
-    cv.cv2.destroyAllWindows()
+        #draw Match
+        result = cv.drawMatches(img1, kp1, img2, kp2, good_matches, None, flags=2)
+        
+        cv.imshow("Detector",result)
+        cv.waitKey(0)
+
+cv.destroyAllWindows()
     
 if __name__ == "__main__":
     main()
