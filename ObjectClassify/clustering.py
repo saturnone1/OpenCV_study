@@ -5,28 +5,9 @@ import cv2 as cv
 import numpy as np
 from matplotlib import pyplot as plt
 
-K = 5
+K = 10
 iteration = 30
 color_space = 1
-
-'''
-seeTrackbar = 0
-def kmc(x):
-    pass
-
-def iter(x):
-    pass
-
-def color(x):
-    pass
-
-def makeTrackbar(name):
-    cv.namedWindow(name)
-    # create trackbars for color change
-    cv.createTrackbar('K',name,10,30, kmc)
-    cv.createTrackbar('Iter',name,5,30, iter)
-    cv.createTrackbar('Space',name,0,2, color)
-'''
 
 def kmeans_clustering(img,K,iteration):
     shape = img.shape
@@ -55,10 +36,10 @@ def histogram(img1,img2):
 
 def main():
     global K, iteration, color_space, seeTrackbar
-    img1 = cv.imread('image/tw1.jpg', cv.IMREAD_COLOR)
-    img2 = cv.imread('image/tw2.jpg', cv.IMREAD_COLOR)
+    img1 = cv.imread('image/tw3.jpg', cv.IMREAD_COLOR)
+    img2 = img1[img1.shape[1]/10:img1.shape[1]*11/10,img1.shape[0]/4: img1.shape[0]*2/4].copy()
     height, width , channels = img1.shape
-    img2 = cv.resize(img2, dsize = (width, height), interpolation=cv.INTER_LINEAR_EXACT)
+    #img2 = cv.resize(img2, dsize = (width, height), interpolation=cv.INTER_LINEAR_EXACT)
 
     '''
     #트랙바 생성
@@ -99,7 +80,6 @@ def main():
     #histogram
     hist1,hist2 = histogram(img_result1,img_result2)
     #hist1,hist2 = histogram(img1,img2)
-    print(hist1.shape, hist2.shape)
 
     #두 이미지 연결 및 출력
     plt.subplot(221),plt.imshow(img_result1),plt.title('Start Kmeans')
